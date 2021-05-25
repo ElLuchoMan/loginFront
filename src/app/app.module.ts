@@ -14,6 +14,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { UserComponent } from './Components/user/user.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { interceptorProvider } from './Services/producto-interceptor.service';
+import { RegistroComponent } from './Components/registro/registro.component';
 
 
 
@@ -28,6 +29,7 @@ import { interceptorProvider } from './Services/producto-interceptor.service';
     LoginComponent,
     UserComponent,
     AdminComponent,
+    RegistroComponent,
 
   ],
   imports: [

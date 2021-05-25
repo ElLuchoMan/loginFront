@@ -1,0 +1,40 @@
+<div *ngIf="isRegister; else noRegister">
+    Cuenta creada!!
+</div>
+
+<ng-template #noRegister>
+    <div class="container">
+        <h3 class="mb-4">Registrarse</h3>
+        <form name="form" #f="ngForm" style="max-width: 250px;" (ngSubmit)="onRegister()" novalidate>
+
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input class="form-control" name="nombre" type="text" [(ngModel)]="form.nombre" #nombre="ngModel"
+                    autocomplete="off" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nombreUsuario">Nombre de Usuario:</label>
+                <input class="form-control" name="nombreUsuario" type="text" [(ngModel)]="form.nombreUsuario"
+                    #nombreUsuario="ngModel" autocomplete="off" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input class="form-control" name="email" type="email" [(ngModel)]="form.email" #email="ngModel" email
+                    autocomplete="off" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input class="form-control" type="password" name="password" [(ngModel)]="form.password"
+                    #password="ngModel" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary mb-3" [disabled]="!f.valid">Crear Cuenta</button>
+                <div *ngIf="f.submitted && isRegisterFail" class="alert alert-danger">Fail al crear cuenta: {{ errorMsg
+                    }}</div>
+            </div>
+        </form>
+    </div>
+</ng-template>

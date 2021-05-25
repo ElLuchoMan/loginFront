@@ -7,6 +7,7 @@ import { DetalleProductoComponent } from './Components/Producto/detalle-producto
 import { EditarProductoComponent } from './Components/Producto/editar-producto/editar-producto.component';
 import { ListarProductoComponent } from './Components/Producto/listar-producto/listar-producto.component';
 import { NuevoProductoComponent } from './Components/Producto/nuevo-producto/nuevo-producto.component';
+import { RegistroComponent } from './Components/registro/registro.component';
 import { UserComponent } from './Components/user/user.component';
 import { Guard } from './Guards/guard.guard';
 
@@ -36,6 +37,7 @@ const routes: Routes = [
 
   // rutas a login y registro
   { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegistroComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
