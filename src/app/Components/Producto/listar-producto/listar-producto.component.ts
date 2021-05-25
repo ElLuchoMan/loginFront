@@ -25,7 +25,11 @@ export class ListarProductoComponent implements OnInit {
       }
     );
   }
-  onDelete(id: number|undefined) {
-
+  onDelete(id: number): void {
+    if (confirm('¿Estás seguro?')) {
+      this.productoService.borrar(id).subscribe(data => {
+        this.cargarProductos();
+      });
+    }
   }
 }
