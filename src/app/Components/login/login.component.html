@@ -16,11 +16,11 @@
         <input type="password" class="form-control" name="password" [(ngModel)]="form.password" autocomplete="off"
           required>
       </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-success" [disabled]="!f.valid">Login</button>
+      <div class="form-group mt-2">
+        <button type="submit" class="btn btn-success align-center" [disabled]="!f.valid">Login</button>
         <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">Fail al loguearse: {{ errorMsg }}</div>
-        <a routerLink="/registro"><button class="btn btn-primary float-right">Crear Cuenta</button></a>
-        <p class="float-right mr-3">¿No tienes cuenta?</p>
+        <a routerLink="/registro"><button class="btn btn-primary float-right ms-2">Crear Cuenta</button></a>
+        <p class="float-right me-3">¿No tienes cuenta?</p>
       </div>
     </form>
   </div>
