@@ -6,7 +6,7 @@ import { TokenService } from '../Services/token.service';
 @Injectable({
   providedIn: 'root'
 })
-export class GuardGuard implements CanActivate {
+export class Guard implements CanActivate {
   realRol: string;
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {

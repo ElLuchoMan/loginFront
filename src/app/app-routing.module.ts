@@ -6,18 +6,31 @@ import { DetalleProductoComponent } from './Components/Producto/detalle-producto
 import { EditarProductoComponent } from './Components/Producto/editar-producto/editar-producto.component';
 import { ListarProductoComponent } from './Components/Producto/listar-producto/listar-producto.component';
 import { NuevoProductoComponent } from './Components/Producto/nuevo-producto/nuevo-producto.component';
+import { Guard } from './Guards/guard.guard';
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'lista', component: ListarProductoComponent},
-  {path: 'detalle/:id', component: DetalleProductoComponent},
-  {path: 'nuevo', component: NuevoProductoComponent},
-  {path: 'editar/:id', component: EditarProductoComponent},
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'lista', component: ListarProductoComponent },
+
+  // productos: utilizamos canActivate
+  {
+    path: 'detalle/:id', component: DetalleProductoComponent,
+    canActivate: [Guard], data: { expectedRol: ['admin', 'user'] }
+  },
+  {
+    path: 'nuevo', component: NuevoProductoComponent,
+    canActivate: [Guard], data: { expectedRol: ['admin'] }
+  },
+  {
+    path: 'editar/:id', component: EditarProductoComponent,
+    canActivate: [Guard], data: { expectedRol: ['admin'] }
+  },
+
   // rutas a login y registro
-  {path: 'login', component: LoginComponent},
-  {path: '**', redirectTo: 'home', pathMatch: 'full'}
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
