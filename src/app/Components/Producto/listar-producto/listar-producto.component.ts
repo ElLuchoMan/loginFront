@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Producto } from 'src/app/Models/Producto.interface';
 import { ProductoService } from 'src/app/Services/producto.service';
 
@@ -8,6 +8,9 @@ import { ProductoService } from 'src/app/Services/producto.service';
   styleUrls: ['./listar-producto.component.css']
 })
 export class ListarProductoComponent implements OnInit {
+ 
+  @Input() user: string;
+
   productos: Producto[] = [];
 
   constructor(private productoService: ProductoService) { }
@@ -25,7 +28,8 @@ export class ListarProductoComponent implements OnInit {
       }
     );
   }
-  onDelete(id: any): void {
+
+  onDelete(id: number): void {
     if (confirm('¿Estás seguro?')) {
       this.productoService.borrar(id).subscribe(data => {
         this.cargarProductos();

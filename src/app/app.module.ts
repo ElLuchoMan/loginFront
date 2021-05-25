@@ -11,6 +11,9 @@ import { EditarProductoComponent } from './Components/Producto/editar-producto/e
 import { ListarProductoComponent } from './Components/Producto/listar-producto/listar-producto.component';
 import { NuevoProductoComponent } from './Components/Producto/nuevo-producto/nuevo-producto.component';
 import { LoginComponent } from './Components/login/login.component';
+import { UserComponent } from './Components/user/user.component';
+import { AdminComponent } from './Components/admin/admin.component';
+import { interceptorProvider } from './Services/producto-interceptor.service';
 
 
 
@@ -23,6 +26,8 @@ import { LoginComponent } from './Components/login/login.component';
     NuevoProductoComponent,
     EditarProductoComponent,
     LoginComponent,
+    UserComponent,
+    AdminComponent,
 
   ],
   imports: [
@@ -31,7 +36,7 @@ import { LoginComponent } from './Components/login/login.component';
     FormsModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
