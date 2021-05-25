@@ -14,7 +14,7 @@
         <tr *ngFor="let producto of productos">
           <td>{{producto.id}}</td>
           <td>{{producto.nombreProducto}}</td>
-          <td>{{producto.precio}}</td>
+          <td>${{producto.precio}}</td>
           <td><button class="btn btn-primary" routerLink="/detalle/{{producto.id}}">Ver</button></td>
           <td><button class="btn btn-warning" routerLink="/editar/{{producto.id}}">Editar</button></td>
           <td><button class="btn btn-danger" (click)="onDelete(producto.id)">Borrar</button></td>

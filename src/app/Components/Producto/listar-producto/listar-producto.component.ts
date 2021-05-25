@@ -25,7 +25,7 @@ export class ListarProductoComponent implements OnInit {
       }
     );
   }
-  onDelete(id: number): void {
+  onDelete(id: any): void {
     if (confirm('¿Estás seguro?')) {
       this.productoService.borrar(id).subscribe(data => {
         this.cargarProductos();
