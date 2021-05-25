@@ -1,0 +1,27 @@
+<div *ngIf="isLogged; else loggedOut">
+    Has iniciado sesión como: {{ roles }}
+  </div>
+  
+  <ng-template #loggedOut>
+    <div *ngIf="!isLogged" class="container">
+      <h5>Iniciar Sesión</h5>
+      <form name="form" #f="ngForm" novalidate (ngSubmit)="onLogin()">
+        <div class="form-group">
+          <label for="nombreUsuario">Nombre de Usuario: </label>
+          <input type="text" class="form-control" name="nombreusuario" [(ngModel)]="form.nombreUsuario" 
+          autocomplete="off" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña: </label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="form.password" 
+          autocomplete="off" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!f.valid">Login</button>
+          <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">Fail al loguearse: {{ errorMsg }}</div>
+          <a routerLink="/registro"><button class="btn btn-primary float-right">Crear Cuenta</button></a>
+          <p class="float-right mr-3">¿No tienes cuenta?</p>
+        </div>
+      </form>
+    </div>
+  </ng-template>

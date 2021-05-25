@@ -10,6 +10,7 @@ import { DetalleProductoComponent } from './Components/Producto/detalle-producto
 import { EditarProductoComponent } from './Components/Producto/editar-producto/editar-producto.component';
 import { ListarProductoComponent } from './Components/Producto/listar-producto/listar-producto.component';
 import { NuevoProductoComponent } from './Components/Producto/nuevo-producto/nuevo-producto.component';
+import { LoginComponent } from './Components/login/login.component';
 
 
 
@@ -21,6 +22,7 @@ import { NuevoProductoComponent } from './Components/Producto/nuevo-producto/nue
     DetalleProductoComponent,
     NuevoProductoComponent,
     EditarProductoComponent,
+    LoginComponent,
 
   ],
   imports: [
