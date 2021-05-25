@@ -25,4 +25,7 @@ export class ListarProductoComponent implements OnInit {
       }
     );
   }
+  onDelete(id: number|undefined) {
+
+  }
 }
